@@ -1,0 +1,149 @@
+/* ── Hero Section ─────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 7rem 5% 4rem;
+}
+
+/* Two-column flex row — never overlaps */
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  /* Mobile: stack vertically, image below text */
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
+
+/* ── Image Column ─────────────────────────────────── */
+.hero-image-col {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .hero-image-col {
+    width: 340px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-image-col {
+    width: 380px;
+  }
+}
+
+.hero-image-frame {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 4 / 5;   /* portrait ratio — always consistent */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 6px 6px 0px var(--accent-muted);
+  transition: box-shadow 0.3s ease;
+}
+
+.hero-image-frame:hover {
+  box-shadow: 10px 10px 0px var(--accent-muted);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: grayscale(10%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.hero-image-frame:hover .hero-image {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+/* ── Text Column ──────────────────────────────────── */
+.hero-text-col {
+  flex: 1;
+  min-width: 0; /* prevents flex blowout */
+}
+
+.hero-greeting {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 460px;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  padding: 0.875rem 2rem;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

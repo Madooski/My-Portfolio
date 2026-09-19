@@ -1,0 +1,82 @@
+/* ==========================================================================
+   CSS DESIGN TOKENS
+   - Dark mode is default (data-theme="dark" or prefers-color-scheme: dark)
+   - Light mode applies on data-theme="light"
+   - Toggled manually via useTheme hook; persisted in localStorage
+   ========================================================================== */
+
+/* --- DARK MODE (default) --- */
+:root,
+[data-theme="dark"] {
+  --bg-color: #0D0D0D;
+  --surface-color: #151515;
+  --surface-hover: #1C1C1C;
+  --text-primary: #F2F0EB;
+  --text-secondary: #A8A8A2;
+  --border-color: #292929;
+  --border-hover: #3A3A3A;
+  --accent: #C96A45;
+  --accent-hover: #E08161;
+  --accent-muted: rgba(201, 106, 69, 0.13);
+
+  /* Subtle gradient — 2-3% opacity shift only */
+  --bg-gradient: radial-gradient(ellipse at top right, rgba(201, 106, 69, 0.03) 0%, transparent 50%),
+                 radial-gradient(ellipse at bottom left, rgba(201, 106, 69, 0.02) 0%, transparent 50%);
+}
+
+/* --- LIGHT MODE --- */
+[data-theme="light"] {
+  --bg-color: #F7F7F5;
+  --surface-color: #FFFFFF;
+  --surface-hover: #F0F0EE;
+  --text-primary: #1A1A1A;
+  --text-secondary: #5A5A55;
+  --border-color: #E0E0DB;
+  --border-hover: #C8C8C2;
+  --accent: #C96A45;
+  --accent-hover: #B85A35;
+  --accent-muted: rgba(201, 106, 69, 0.10);
+
+  /* Light mode gradient — just as subtle */
+  --bg-gradient: radial-gradient(ellipse at top right, rgba(201, 106, 69, 0.03) 0%, transparent 50%),
+                 radial-gradient(ellipse at bottom left, rgba(201, 106, 69, 0.02) 0%, transparent 50%);
+}
+
+/* OS-level fallback (before JS hydrates) */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg-color: #F7F7F5;
+    --surface-color: #FFFFFF;
+    --surface-hover: #F0F0EE;
+    --text-primary: #1A1A1A;
+    --text-secondary: #5A5A55;
+    --border-color: #E0E0DB;
+    --border-hover: #C8C8C2;
+    --accent: #C96A45;
+    --accent-hover: #B85A35;
+    --accent-muted: rgba(201, 106, 69, 0.10);
+    --bg-gradient: radial-gradient(ellipse at top right, rgba(201, 106, 69, 0.03) 0%, transparent 50%),
+                   radial-gradient(ellipse at bottom left, rgba(201, 106, 69, 0.02) 0%, transparent 50%);
+  }
+}
+
+/* --- TYPOGRAPHY --- */
+:root {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --fw-display: 500;
+  --fw-body: 400;
+  --fw-body-medium: 500;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3.5rem;
+  --text-4xl: 4.5rem;
+
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-theme: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
