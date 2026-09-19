@@ -6,7 +6,7 @@ const About = () => {
     <section id="about" className="section-padding">
       <div className="grid-container">
         <div className="section-header">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -14,15 +14,15 @@ const About = () => {
             About
           </motion.h2>
         </div>
-        
+
         <div className="about-content">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.1 }}
           >
-            I'm a frontend developer passionate about bridging the gap between design and engineering. With a strong foundation in modern web technologies and an eye for aesthetics, I build scalable applications that don't just work—they feel right.
+            I'm, a frontend developer building with React and JavaScript. My path into tech started in Industrial Chemistry — and surprisingly, debugging a broken build isn't so different from debugging a failed experiment: the same instinct for finding where the logic breaks.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -30,7 +30,7 @@ const About = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
           >
-            My approach is rooted in simplicity, performance, and accessibility. Whether it's a complex dashboard or a marketing site, I focus on delivering seamless user experiences through clean architecture and intentional design.
+            I care about more than making interfaces look good — I pay attention to how they feel, behave, and hold up in the real world..
           </motion.p>
         </div>
       </div>

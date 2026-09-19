@@ -10,9 +10,9 @@ const Hero = () => {
         {/* LEFT — Profile Image */}
         <motion.div
           className="hero-image-col"
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: 1.8, ease: [0.4, 0, 0.2, 1] }}
         >
           <div className="hero-image-frame">
             <img
@@ -31,34 +31,34 @@ const Hero = () => {
         <div className="hero-text-col">
           <motion.p
             className="hero-greeting"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
           >
             Hello, I'm
           </motion.p>
           <motion.h1
             className="hero-title"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, delay: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
             Osolobugwemado.<br />
             <span className="accent-text">Frontend Dev.</span>
           </motion.h1>
           <motion.p
             className="hero-subtitle"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, delay: 0.7, ease: [0.4, 0, 0.2, 1] }}
           >
             I craft fast, accessible, and highly refined web interfaces with strong product sense.
           </motion.p>
           <motion.div
             className="hero-actions"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, delay: 0.9, ease: [0.4, 0, 0.2, 1] }}
           >
             <a href="#projects" className="btn btn-primary">Selected Works</a>
             <a href="#contact" className="btn btn-secondary">Get in touch</a>

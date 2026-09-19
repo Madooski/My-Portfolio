@@ -3,7 +3,7 @@ import './Skills.css';
 
 const skillsData = [
   { category: 'Languages', items: ['JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3'] },
-  { category: 'Frameworks', items: ['React.js', 'Next.js'] },
+  { category: 'Frameworks', items: ['React.js',] },
   { category: 'Styling', items: ['Tailwind CSS', 'Framer Motion'] },
   { category: 'State Management', items: ['Context API', 'Redux Toolkit'] },
   { category: 'Tools & Workflow', items: ['Git & GitHub', 'REST APIs', 'Vercel', 'Netlify'] }
@@ -14,7 +14,7 @@ const Skills = () => {
     <section id="skills" className="section-padding">
       <div className="grid-container">
         <div className="section-header">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -22,10 +22,10 @@ const Skills = () => {
             Technical Arsenal
           </motion.h2>
         </div>
-        
+
         <div className="skills-content">
           {skillsData.map((skillGroup, index) => (
-            <motion.div 
+            <motion.div
               key={skillGroup.category}
               className="skill-group"
               initial={{ opacity: 0, y: 20 }}
