@@ -10,17 +10,17 @@ const GithubIcon = () => (
 
 const projectsData = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A modern, high-performance headless e-commerce store with full cart functionality.',
-    tech: ['Next.js', 'React', 'Tailwind', 'Stripe'],
-    live: '#',
+    title: 'Wanderly',
+    description: 'AI-powered travel planner with personalized itineraries, interactive maps, weather, budget planning, packing suggestions, and visa guidance.',
+    tech: ['JavaScript', 'React', 'CSS3', 'Gemini API'],
+    live: 'https://wanderlyplanner.netlify.app',
     repo: '#'
   },
   {
-    title: 'Financial Dashboard',
-    description: 'Real-time data visualization dashboard with customizable widgets and reports.',
-    tech: ['React', 'Redux Toolkit', 'Framer Motion', 'Chart.js'],
-    live: '#',
+    title: 'Weather Dashboard',
+    description: 'Responsive weather dashboard with real-time weather data, forecasts, location search, and an intuitive interface for tracking weather conditions',
+    tech: ['JavaScript', 'CSS3', 'API Integration'],
+    live: 'https://wedadashboard.netlify.app',
     repo: '#'
   }
 ];
@@ -30,7 +30,7 @@ const Projects = () => {
     <section id="projects" className="section-padding projects-section">
       <div className="grid-container">
         <div className="section-header">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -38,10 +38,10 @@ const Projects = () => {
             Selected Works
           </motion.h2>
         </div>
-        
+
         <div className="projects-content">
           {projectsData.map((project, index) => (
-            <motion.article 
+            <motion.article
               key={project.title}
               className="project-card"
               initial={{ opacity: 0, y: 20 }}
