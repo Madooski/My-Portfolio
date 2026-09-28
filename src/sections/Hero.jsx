@@ -43,7 +43,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.5, delay: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
-            Osolobugwemado.<br />
+            Mado Divine.<br />
             <span className="accent-text">Frontend Dev.</span>
           </motion.h1>
           <motion.p
