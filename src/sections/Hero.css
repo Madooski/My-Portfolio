@@ -15,8 +15,8 @@
   align-items: center;
   gap: 5rem;
 
-  /* Mobile: stack vertically, image below text */
-  flex-direction: column-reverse;
+  /* Mobile: stack vertically, image above text */
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -48,13 +48,19 @@
 
 .hero-image-frame {
   width: 100%;
-  max-width: 340px;
+  max-width: 260px;
   aspect-ratio: 4 / 5;   /* portrait ratio — always consistent */
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid var(--border-color);
   box-shadow: 6px 6px 0px var(--accent-muted);
   transition: box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .hero-image-frame {
+    max-width: 340px;
+  }
 }
 
 .hero-image-frame:hover {
@@ -80,6 +86,13 @@
 .hero-text-col {
   flex: 1;
   min-width: 0; /* prevents flex blowout */
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-text-col {
+    text-align: left;
+  }
 }
 
 .hero-greeting {
@@ -92,9 +105,9 @@
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 8vw, 4rem);
   line-height: 1.08;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .accent-text {
@@ -102,17 +115,34 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  font-size: clamp(0.95rem, 3.5vw, 1.125rem);
   color: var(--text-secondary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   max-width: 460px;
   line-height: 1.75;
+  /* Center the block on mobile */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .hero-actions {
+    justify-content: flex-start;
+  }
 }
 
 /* ── Buttons ──────────────────────────────────────── */
@@ -125,6 +155,18 @@
   display: inline-block;
   text-align: center;
   letter-spacing: 0.02em;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .btn-primary {

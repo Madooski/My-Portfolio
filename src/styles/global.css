@@ -48,7 +48,7 @@ ol {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -56,5 +56,17 @@ ol {
 }
 
 .section-padding {
-  padding: 6rem 0;
+  padding: 5rem 0;
+}
+
+/* ── Global Mobile Tweaks ─────────────────────────── */
+@media (max-width: 767px) {
+  .grid-container {
+    gap: 1rem;
+    padding: 0 1.25rem;
+  }
+
+  .section-padding {
+    padding: 4rem 0;
+  }
 }
