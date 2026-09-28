@@ -3,8 +3,8 @@ import './Skills.css';
 
 const skillsData = [
   { category: 'Languages', items: ['JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3'] },
-  { category: 'Frameworks', items: ['React.js',] },
-  { category: 'Styling', items: ['Tailwind CSS', 'Framer Motion'] },
+  { category: 'Frameworks & Libraries', items: ['React.js', 'Next.js'] },
+  { category: 'Styling & Animations', items: ['Tailwind CSS', 'Bootstrap', 'Framer Motion'] },
   { category: 'State Management', items: ['Context API', 'Redux Toolkit'] },
   { category: 'Tools & Workflow', items: ['Git & GitHub', 'REST APIs', 'Vercel', 'Netlify'] }
 ];
