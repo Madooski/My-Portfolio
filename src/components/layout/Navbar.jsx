@@ -26,11 +26,22 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [mobileMenuOpen]);
 
+  // Blur the page content (not the navbar) when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+    // Cleanup on unmount
+    return () => document.body.classList.remove('mobile-menu-open');
+  }, [mobileMenuOpen]);
+
   // Close menu and smoothly scroll to target
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    
+
     const element = document.getElementById(targetId);
     if (element) {
       // Small timeout allows the mobile menu to start closing before the scroll begins
@@ -58,7 +69,7 @@ const Navbar = () => {
             <li><a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a></li>
             <li><a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
           </ul>
-          
+
           <button
             className="theme-toggle"
             onClick={toggleTheme}
@@ -75,8 +86,8 @@ const Navbar = () => {
           </button>
 
           {/* Hamburger Button (Mobile only) */}
-          <button 
-            className="hamburger-toggle" 
+          <button
+            className="hamburger-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >

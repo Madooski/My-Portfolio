@@ -2,16 +2,28 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 2rem 5%;
+  padding: 1.5rem 5%;
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .navbar {
+    padding: 2rem 5%;
+  }
+}
+
 .navbar.scrolled {
-  padding: 1rem 5%;
+  padding: 0.875rem 5%;
   background-color: var(--surface-color);
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
+}
+
+@media (min-width: 768px) {
+  .navbar.scrolled {
+    padding: 1rem 5%;
+  }
 }
 
 .nav-content {
@@ -58,8 +70,8 @@
   background: none;
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -67,6 +79,13 @@
   cursor: pointer;
   transition: var(--transition-smooth);
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 .theme-toggle:hover {
@@ -97,10 +116,10 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 2rem 0 1rem;
+  padding: 1.5rem 0 1rem;
   align-items: center;
   border-top: 1px solid var(--border-color);
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .mobile-nav-links a {
@@ -118,16 +137,29 @@
   .nav-links {
     display: none;
   }
-  
+
   .hamburger-toggle {
     display: flex;
   }
 
   .nav-right {
-    gap: 1.2rem;
+    gap: 0.875rem;
   }
 
   .mobile-menu {
     display: block;
+  }
+}
+
+/* ── Page content blur when mobile menu is open ────── */
+main {
+  transition: filter 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  body.mobile-menu-open main {
+    filter: blur(3px) brightness(0.6);
+    pointer-events: none;
+    user-select: none;
   }
 }
