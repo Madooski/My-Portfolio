@@ -14,14 +14,21 @@ const projectsData = [
     description: 'AI-powered travel planner with personalized itineraries, interactive maps, weather, budget planning, packing suggestions, and visa guidance.',
     tech: ['JavaScript', 'React', 'CSS3', 'Gemini API'],
     live: 'https://wanderlyplanner.netlify.app',
-    repo: '#'
+    repo: 'null'
   },
   {
-    title: 'Weather Dashboard',
-    description: 'Responsive weather dashboard with real-time weather data, forecasts, location search, and an intuitive interface for tracking weather conditions',
-    tech: ['JavaScript', 'CSS3', 'API Integration'],
-    live: 'https://wedadashboard.netlify.app',
-    repo: '#'
+    title: 'Kanbly',
+    description: 'A lightweight Kanban task board with role-based onboarding, Planning and Archive views, plus global search across all tasks.',
+    tech: ['Typescript', 'Next.js', 'Tailwind', 'Redux Toolkit'],
+    live: 'https://kanbly.netlify.app',
+    repo: 'https://github.com/Madooski/Kanbly'
+  },
+  {
+    title: "Classy Castle Hotels",
+    description: "   A premium hotel website showcasing rooms, bookings, and hospitality services, with a fully responsive design. Built with the team at Esoich Global for a hotel client.",
+    tech: ['JavaScript', 'React', 'Tailwind'],
+    live: 'https://classycastlehotels.netlify.app/',
+    repo: 'null'
   }
 ];
 
@@ -59,10 +66,12 @@ const Projects = () => {
                 </div>
               </div>
               <div className="project-links">
-                <a href={project.repo} className="project-link" aria-label="Github Repository">
-                  <GithubIcon />
-                </a>
-                <a href={project.live} className="project-link" aria-label="Live Demo">
+                {project.repo !== 'null' && (
+                  <a href={project.repo} className="project-link" aria-label="Github Repository" target="_blank" rel="noopener noreferrer">
+                    <GithubIcon />
+                  </a>
+                )}
+                <a href={project.live} className="project-link" aria-label="Live Demo" target="_blank" rel="noopener noreferrer">
                   <ExternalLink />
                 </a>
               </div>
