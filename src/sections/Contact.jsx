@@ -8,6 +8,13 @@ const GithubIcon = ({ className }) => (
   </svg>
 );
 
+const LinkedInIcon = ({ className }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
+);
 /* WhatsApp brand SVG */
 const WhatsAppIcon = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -32,15 +39,22 @@ const contactLinks = [
     external: false,
   },
   {
-    label: 'WhatsApp — Chat with me',
-    href: 'https://wa.me/2349071827011',
-    Icon: WhatsAppIcon,
+    label: 'linkedin.com/in/mado-divine',
+    href: 'https://www.linkedin.com/in/mado-divine',
+    Icon: LinkedInIcon,
     external: true,
+    ariaLabel: 'LinkedIn profile',
   },
   {
     label: 'github.com/Madooski',
     href: 'https://github.com/Madooski',
     Icon: GithubIcon,
+    external: true,
+  },
+  {
+    label: 'WhatsApp — Chat with me',
+    href: 'https://wa.me/2349071827011',
+    Icon: WhatsAppIcon,
     external: true,
   },
 ];
@@ -77,11 +91,12 @@ const Contact = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ delay: 0.2 }}
           >
-            {contactLinks.map(({ label, href, Icon, external }) => (
+            {contactLinks.map(({ label, href, Icon, external, ariaLabel }) => (
               <a
                 key={href}
                 href={href}
                 className="contact-link"
+                aria-label={ariaLabel}
                 {...(external
                   ? { target: '_blank', rel: 'noopener noreferrer' }
                   : {})}
